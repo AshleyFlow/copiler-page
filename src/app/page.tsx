@@ -50,15 +50,16 @@ export default function Home() {
   }, [onChange, src]);
 
   return (
-    <main>
+    <main className="flex h-screen overflow-y-hidden">
       <ReactCodeMirror
+        className="w-1/2 h-screen overflow-y-scroll"
         value={src}
         onChange={onChange}
         extensions={[javascript({})]}
       ></ReactCodeMirror>
       {loaded ? (
-        <pre>
-          <code ref={ref} className="text-sm"></code>
+        <pre className="w-1/2 overflow-y-scroll">
+          <code ref={ref} className="text-sm h-screen"></code>
         </pre>
       ) : undefined}
     </main>
