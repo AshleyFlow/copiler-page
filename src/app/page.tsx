@@ -7,7 +7,7 @@ export default function Home() {
   let topbarHeight = 30;
 
   return (
-    <main className="h-full w-full overflow-clip">
+    <main className="h-full w-full">
       <Topbar height={topbarHeight}></Topbar>
       <Editor removeHeight={topbarHeight}></Editor>
     </main>

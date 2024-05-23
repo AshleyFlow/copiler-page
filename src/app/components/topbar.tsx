@@ -7,7 +7,7 @@ export default function Topbar(props: { height: number }) {
       <a
         href="https://github.com/highflowey/copiler"
         target="_blank"
-        className="flex items-end justify-center rounded-md bg-slate-300"
+        className="flex box-content w-24 items-end justify-center rounded-md bg-slate-300"
         style={{ height: props.height + "px" }}
       >
         <Image
