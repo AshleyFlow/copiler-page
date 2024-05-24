@@ -1,23 +1,40 @@
 import Image from "next/image";
 import github_png from "../../../public/github.png";
+import {
+  Toolbar,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@mui/material";
+import { HomeRounded } from "@mui/icons-material";
+import { useState } from "react";
 
-export default function Topbar(props: { height: number }) {
+export default function Topbar(props: {}) {
+  let [page, setPage] = useState(0);
+
   return (
-    <main className="flex bg-slate-200 justify-end items-center w-full">
-      <a
-        href="https://github.com/highflowey/copiler"
-        target="_blank"
-        className="flex box-content w-24 items-end justify-center rounded-md bg-slate-300"
-        style={{ height: props.height + "px" }}
+    <Toolbar className="h-1/6 bg-slate-300 sticky" variant="regular">
+      <BottomNavigation
+        className="bg-transparent"
+        showLabels
+        value={page}
+        onChange={(_, value) => {
+          setPage(value);
+        }}
       >
-        <Image
-          src={github_png}
-          width={props.height}
-          height={props.height}
-          alt="Github Mark"
-        />
-        <h1 className="text-1xl font-mono">Github</h1>
-      </a>
-    </main>
+        <BottomNavigationAction
+          className="font-bold"
+          label="Editor"
+          icon={<HomeRounded className="text-3xl"></HomeRounded>}
+        ></BottomNavigationAction>
+        <BottomNavigationAction
+          className="font-bold"
+          label="Github"
+          icon={
+            <Image src={github_png} width={30} height={30} alt="Github Mark" />
+          }
+          href="https://github.com/highflowey/copiler"
+        ></BottomNavigationAction>
+      </BottomNavigation>
+    </Toolbar>
   );
 }

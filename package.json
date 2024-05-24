@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.2.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
     "@uiw/react-codemirror": "^4.22.1",
     "highlight.js": "^11.9.0",
     "next": "14.2.3",

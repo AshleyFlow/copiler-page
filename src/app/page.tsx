@@ -1,15 +1,16 @@
 "use client";
 
-import Topbar from "./components/topbar";
 import Editor from "./components/editor";
+import { Box } from "@mui/material";
+import Topbar from "./components/topbar";
 
 export default function Home() {
-  let topbarHeight = 30;
-
   return (
-    <main className="h-full w-full">
-      <Topbar height={topbarHeight}></Topbar>
-      <Editor removeHeight={topbarHeight}></Editor>
+    <main className="h-screen w-full overflow-y-clip">
+      <Topbar></Topbar>
+      <Box className="h-5/6 overflow-clip">
+        <Editor></Editor>
+      </Box>
     </main>
   );
 }
