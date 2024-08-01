@@ -1,12 +1,13 @@
 {
   "name": "copiler",
-  "version": "0.1.0",
+  "type": "module",
+  "version": "0.1.1",
   "files": [
     "copiler_bg.wasm",
     "copiler.js",
     "copiler.d.ts"
   ],
-  "module": "copiler.js",
+  "main": "copiler.js",
   "types": "copiler.d.ts",
   "sideEffects": [
     "./snippets/*"
