@@ -5,10 +5,7 @@ import init, { compile } from "../copiler/copiler";
 import hljs from "highlight.js/lib/core";
 import lua from "highlight.js/lib/languages/lua";
 
-export default function Editor(props: {}) {
-  let ref = createRef<HTMLHeadElement>();
-  let [loaded, setLoaded] = useState(false);
-  let [src, _] = useState(`class Car {
+const DEFAULT = `class Car {
   let speed = 0
 
   let boost = (speed: number) {
@@ -21,7 +18,22 @@ export default function Editor(props: {}) {
 
     print("after:", self.speed)
   }
-}`);
+}
+
+let car = Car.new()
+car:boost(5)
+
+task.wait(1)
+
+\\\\
+-- do it in luau because copiler doesn't have unary operators 💀
+car:boost(-5)
+\\\\`;
+
+export default function Editor(props: {}) {
+  let ref = createRef<HTMLHeadElement>();
+  let [loaded, setLoaded] = useState(false);
+  let [src, _] = useState(DEFAULT);
 
   const onChange = useCallback(
     (val: string) => {
